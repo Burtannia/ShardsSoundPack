@@ -1,6 +1,15 @@
 import System.Directory (listDirectory)
 import System.Environment (getArgs)
 
+interface, title, author, version :: String
+interface = "90005"
+title = "Shards Sound Pack"
+author = "James Burton"
+version = "1.0"
+
+dir :: String
+dir = filter (not . (==) ' ') title
+
 main :: IO ()
 main = do
     args <- getArgs
@@ -9,14 +18,16 @@ main = do
         _ -> genLua
 
 genToc :: IO ()
-genToc = writeFile "SharedMedia_Shards.toc" tocString
+genToc = writeFile tocName tocString
+    where
+        tocName = dir ++ ".toc"
 
 tocString :: String
 tocString =
-    "## Interface: 90005\n" ++
-    "## Title: SharedMedia Shards\n" ++
-    "## Author: James Burton\n" ++
-    "## Version: 1.0\n" ++
+    "## Interface: " ++ interface ++ "\n" ++
+    "## Title: " ++ title ++ "\n" ++
+    "## Author: " ++ author ++ "\n" ++
+    "## Version: " ++ version ++ "\n" ++
     "\n" ++
     "main.lua\n"
 
@@ -33,4 +44,4 @@ luaString fs = "local LSM = LibStub(\"LibSharedMedia-3.0\")\n\n" ++ regs
 
 mkRegister :: String -> String
 mkRegister fname =
-    "LSM:Register(\"sound\", \"|cff7f58dbYeti|r\", [[Interface\\Addons\\SharedMedia_Shards\\sound\\" ++ fname ++ "]])\n"
+    "LSM:Register(\"sound\", \"|cff7f58dbYeti|r\", [[Interface\\Addons\\" ++ dir ++ "\\sound\\" ++ fname ++ "]])\n"

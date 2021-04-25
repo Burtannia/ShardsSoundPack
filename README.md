@@ -1,4 +1,4 @@
-# SharedMedia_Shards
+# Shards Sound Pack
 *As used by Shards EU-Kazzak.*
 
 World of Warcraft Addon which makes a collection of sound files available to addons which support `LibSharedMedia`.
