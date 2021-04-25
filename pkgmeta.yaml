@@ -1,0 +1,12 @@
+package-as: ShardsSoundPack
+enable-nolib-creation: no
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+ignore:
+  - MakeAddon
+  - MakeAddon.hs
+  - README.md
+  - .gitignore
