@@ -40,7 +40,7 @@ genLua = do
 luaString :: [FilePath] -> String
 luaString fs = "local LSM = LibStub(\"LibSharedMedia-3.0\")\n\n" ++ regs
     where
-        regs = map mkRegister fs
+        regs = concatMap mkRegister fs
 
 mkRegister :: String -> String
 mkRegister fname =
