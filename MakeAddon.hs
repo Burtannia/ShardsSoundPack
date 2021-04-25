@@ -1,35 +1,12 @@
 import System.Directory (listDirectory)
 import System.Environment (getArgs)
 
-interface, title, author, version :: String
-interface = "90005"
+title, dir :: String
 title = "Shards Sound Pack"
-author = "James Burton"
-version = "1.0"
-
-dir :: String
 dir = filter (not . (==) ' ') title
 
 main :: IO ()
-main = do
-    args <- getArgs
-    case args of
-        ["--full-addon"] -> genToc >> genLua
-        _ -> genLua
-
-genToc :: IO ()
-genToc = writeFile tocName tocString
-    where
-        tocName = dir ++ ".toc"
-
-tocString :: String
-tocString =
-    "## Interface: " ++ interface ++ "\n" ++
-    "## Title: " ++ title ++ "\n" ++
-    "## Author: " ++ author ++ "\n" ++
-    "## Version: " ++ version ++ "\n" ++
-    "\n" ++
-    "main.lua\n"
+main = genLua
 
 genLua :: IO ()
 genLua = do
