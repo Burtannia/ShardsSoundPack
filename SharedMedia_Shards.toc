@@ -1,0 +1,6 @@
+## Interface: 90005
+## Title: SharedMedia Shards
+## Author: James Burton (Syn)
+## Version: 1.0
+
+main.lua
