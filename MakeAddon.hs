@@ -15,7 +15,7 @@ tocString :: String
 tocString =
     "## Interface: 90005\n" ++
     "## Title: SharedMedia Shards\n" ++
-    "## Author: James Burton (Syn)\n" ++
+    "## Author: James Burton\n" ++
     "## Version: 1.0\n" ++
     "\n" ++
     "main.lua\n"
