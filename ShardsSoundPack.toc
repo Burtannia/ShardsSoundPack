@@ -1,6 +1,6 @@
 ## Interface: 90005
 ## Title: Shards Sound Pack
 ## Author: James Burton
-## Version: 1.0
+## Version: @project-version@
 
 main.lua
