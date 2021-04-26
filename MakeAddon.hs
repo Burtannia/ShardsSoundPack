@@ -21,4 +21,6 @@ luaString fs = "local LSM = LibStub(\"LibSharedMedia-3.0\")\n\n" ++ regs
 
 mkRegister :: String -> String
 mkRegister fname =
-    "LSM:Register(\"sound\", \"|cff7f58dbYeti|r\", [[Interface\\Addons\\" ++ dir ++ "\\sound\\" ++ fname ++ "]])\n"
+    "LSM:Register(\"sound\", \"|cff7f58db" ++ name ++ "|r\", [[Interface\\Addons\\" ++ dir ++ "\\sound\\" ++ fname ++ "]])\n"
+    where
+        name = take (length fname - 4) fname -- drop file extension (.ogg or .mp3)
