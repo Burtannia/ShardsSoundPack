@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 0.2-beta
+
+- Added a lot more sounds!
+
 ## 0.1.1-beta
 
 - Fixed the ChangeLog...
